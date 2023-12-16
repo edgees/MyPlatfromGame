@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5717316484210845302
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 195727060204480993, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 195727060204480993, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195727060204480993, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195727060204480993, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195727060204480993, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195727060204480993, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 195727060204480993, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320598332311213526, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027298401929590686, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_Name
+      value: apple Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636282194865950039, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.6339841
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636282194865950039, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.28135228
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636282194865950039, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.007028328
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636282194865950039, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636282194865950039, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636282194865950039, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636282194865950039, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636282194865950039, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636282194865950039, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636282194865950039, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906697258887478045, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7293598183456022363, guid: 1ddc9afd21fec77489b1248d18f31b68, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bf5f7475341f754abd504413a6fdaee, type: 3}

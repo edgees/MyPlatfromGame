@@ -10,12 +10,16 @@ public class playerlife : MonoBehaviour
     private Rigidbody2D rb2d;
     private BoxCollider2D bc2d;
     private enemymovement _enemymovement;
+    private EnemyHealth enemyHealth;
+    private playermovement _playermovement;
     // Start is called before the first frame update
     private void Start()
     {
         anime = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         bc2d = GetComponent<BoxCollider2D>();
+        enemyHealth = GetComponent<EnemyHealth>();
+        _playermovement = GetComponent<playermovement>();
     }
 
     // Update is called once per frame

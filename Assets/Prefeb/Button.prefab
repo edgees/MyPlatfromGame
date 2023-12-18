@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1100120154500366878}
   - component: {fileID: 6521502516172400382}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 664464508248668991}
   - component: {fileID: 9145864049278270513}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef960faffd322834d956fa296ee6a1b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttoninteractwith: {fileID: 0}
+  buttoninteractwith: {fileID: 5449929297645703528, guid: 34e0c65fe187d2f4fbd5dc23ad9ed7dc, type: 3}
 --- !u!1 &5816749517272657024
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7844195109915106383}
   - component: {fileID: 8794986041090580697}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,15 +11,16 @@ public class playermovement : MonoBehaviour
     private BoxCollider2D bc2d;
     private Animator anim;
     private SpriteRenderer sprite;
+    private AudioSource JumpAudio;
 
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private LayerMask jumpableWall;
-    private float lr;
+    public float lr;
     [SerializeField]public float movespeed = 1f;
     [SerializeField]private float jumpheight = 1f;
 
-    public SpawnPos _spawnpos;
-    private float pos;
+    private SpawnPos _spawnpos;
+    public float pos;
 
     private enum playeraction { standing,moving,jumping,falling}
     private playeraction state = playeraction.standing;
@@ -31,11 +32,21 @@ public class playermovement : MonoBehaviour
         bc2d = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        JumpAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     private void Update()
     {
+        if (rb2d == null) 
+        { return; }
+        if (bc2d == null) 
+        {  return; }
+        if (anim == null) 
+        { return; }
+        if (sprite == null) 
+        { return; }
+
         
         rb2d.velocity = new Vector2(lr * movespeed, rb2d.velocity.y);
         lr = Input.GetAxis("Horizontal");
@@ -43,9 +54,10 @@ public class playermovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && onground())
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpheight);
+            JumpAudio.Play();
         }
 
-
+        pos = 0;
         movinganimation();
 
 
@@ -87,5 +99,11 @@ public class playermovement : MonoBehaviour
         return Physics2D.BoxCast(bc2d.bounds.center, bc2d.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 
+    public void SpawnFeedback(GameObject Feedbacks)
+    {
+
+        GameObject.Instantiate(Feedbacks, transform.position, transform.rotation);
+
+    }
 
 }

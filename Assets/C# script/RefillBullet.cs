@@ -14,6 +14,7 @@ public class RefillBullet : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Bullet Get");
         _bullet.GetBullet(bulletamount);
         Destroy(gameObject);
     }

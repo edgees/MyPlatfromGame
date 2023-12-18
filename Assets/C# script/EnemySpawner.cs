@@ -6,7 +6,6 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject Enemy;
-    public int enemynum = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -17,21 +16,20 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemynum <= -1)
-        {
-            Destroy(gameObject);
-        }
+        
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void Spawn()
     {
+        if (Enemy == null)
+            return;
 
-        if (collision.gameObject.CompareTag("EnemySpawnTrigger"))
-        {
-            Debug.Log("Enemy spawned");
-            GameObject.Instantiate(Enemy, transform.position, transform.rotation);
-            enemynum = enemynum - 1;
-        }
+
+        Debug.Log("Enemy spawned");
+        GameObject.Instantiate(Enemy, transform.position, transform.rotation);
+        Destroy(gameObject);
+        
+
 
     }
 }

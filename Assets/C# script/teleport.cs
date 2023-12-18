@@ -7,18 +7,24 @@ using UnityEngine;
 public class teleport : MonoBehaviour
 {
     public Transform teleP;
-    public GameObject player;
+    private GameObject player;
+    //private GameObject boxVariant;
 
     private void Start()
     {
-        
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("teleport");
         if (!collision.gameObject.CompareTag("Player"))
             return;
 
-        
-        player.transform.position= new Vector3(teleP.position.x,teleP.position.y,0);
+        if (collision.gameObject.CompareTag("Player"))
+        { 
+            collision.transform.position = new Vector3(teleP.position.x, teleP.position.y, 0);
+            //Destroy(boxVariant);
+            
+        }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     private Sniped sniped;
-    private AudioSource DieAudioSource;
+    public GameObject DieSound;
     public enum enemytypes
     {
         normalenemy,
@@ -16,20 +16,19 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DieAudioSource = GetComponent<AudioSource>();
         MoveSet();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (DieSound == null)
+            return;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("trap"))
         {
-            DieAudioSource.Play();
             die();
         }
     }
@@ -37,7 +36,8 @@ public class EnemyHealth : MonoBehaviour
     public void die()
     {
         Debug.Log("enemy dead");
-        
+        GameObject diedie = GameObject.Instantiate(DieSound, transform.position, transform.rotation);
+        Destroy(diedie, 1f);
         Destroy(gameObject);
     }
     public void MoveSet()

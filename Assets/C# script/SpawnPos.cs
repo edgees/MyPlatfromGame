@@ -2,47 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using System.Security;
+using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnPos : MonoBehaviour
 {
+    public float RangeX = 0.2f;
     public float RangeY = 0.2f;
-    public float RangeX = 1;
-    public float PositionY = 0.5f;
-    public float PositionX = 0f;
-    private playermovement _playermovement;
+    private float PositionX = 0f;
+    private float py = 0f;
+    private Vector2 pos;
     public GameObject player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        _playermovement = GetComponent<playermovement>();
-        transform.position = new Vector2(transform.position.x,transform.position.y);
-    }
+    public Transform GunPosition;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        PositionX = RangeX;
+    }
     void Update()
     {
-
+        
         if (Input.GetKeyDown(KeyCode.D))
         {
             Debug.Log("move forward");
-            transform.position = new Vector2(transform.position.x + RangeX, transform.position.y - PositionY);
+            transform.position = new Vector2(GunPosition.position.x, transform.position.y);
+            py = transform.position.y;
+            transform.position = new Vector2(GunPosition.position.x + PositionX, py);
         }
         else if (Input.GetKeyUp(KeyCode.D))
         {
-            transform.position = new Vector2(transform.position.x - RangeX, transform.position.y + PositionY);
+            transform.position = new Vector2(GunPosition.position.x, transform.position.y);
         }
 
 
         if (Input.GetKeyDown(KeyCode.A))
         {
             Debug.Log("move backward");
-            transform.position = new Vector2(transform.position.x - RangeX, transform.position.y - PositionY);
+            transform.position = new Vector2(GunPosition.position.x, transform.position.y);
+            py = transform.position.y;
+            transform.position = new Vector2(GunPosition.position.x - PositionX, py);
         }
         else if (Input.GetKeyUp(KeyCode.A))
         {
-            transform.position = new Vector2(transform.position.x + RangeX, transform.position.y + PositionY);
+            transform.position = new Vector2(GunPosition.position.x, transform.position.y);
         }
 
         //if (Input.GetKeyDown(KeyCode.W))
@@ -58,12 +61,18 @@ public class SpawnPos : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             Debug.Log("move down");
-            transform.position = new Vector2(transform.position.x, transform.position.y - PositionY -RangeY);
+            transform.position = new Vector2(GunPosition.position.x, GunPosition.position.y);
+            py = transform.position.y - RangeY;
+            transform.position = new Vector2(GunPosition.position.x, py);
+            PositionX = 0;
         }
         else if (Input.GetKeyUp(KeyCode.S))
         {
-            transform.position = new Vector2(transform.position.x, transform.position.y + PositionY +RangeY);
+            transform.position = new Vector2(GunPosition.position.x, GunPosition.position.y);
+            PositionX = RangeX;
         }
+
+        
     }
 
 }

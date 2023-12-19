@@ -12,6 +12,7 @@ public class playerlife : MonoBehaviour
     private enemymovement _enemymovement;
     private EnemyHealth enemyHealth;
     private playermovement _playermovement;
+    public GameObject DieEffect;
     // Start is called before the first frame update
     private void Start()
     {
@@ -38,6 +39,8 @@ public class playerlife : MonoBehaviour
 
     private void die()
     {
+        GameObject diedie = GameObject.Instantiate(DieEffect, transform.position, transform.rotation);
+        Destroy(diedie,1f);
         anime.SetTrigger("dead");
         rb2d.bodyType = RigidbodyType2D.Static;
         Destroy(bc2d);

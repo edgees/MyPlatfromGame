@@ -6,7 +6,7 @@ public class Sniped : MonoBehaviour
 {
     
     private BulletRecorder _bullet;
-    private AudioSource DieAudioSource;
+    public GameObject HitSound;
     private EnemyHealth _enemyHealth;
     public float Health = 1f;
     // Start is called before the first frame update
@@ -14,11 +14,13 @@ public class Sniped : MonoBehaviour
     {
         GameObject targetBulletRecorder = GameObject.FindGameObjectWithTag("BulletRecorder");
         _bullet = targetBulletRecorder.GetComponent<BulletRecorder>();
-        DieAudioSource = GetComponent<AudioSource>();
         _enemyHealth = GetComponent<EnemyHealth>();
     }
     void Update()
     {
+        if (HitSound == null)
+            return;
+
         if (Health <= 0)
         {
             Health = 0;
@@ -36,6 +38,11 @@ public class Sniped : MonoBehaviour
 
         if (Input.GetMouseButtonUp(1))
         {
+            if (Health > 1)
+            {
+                GameObject hithit = GameObject.Instantiate(HitSound);
+                Destroy(hithit, 1);
+            }
             Health--;
         }
 

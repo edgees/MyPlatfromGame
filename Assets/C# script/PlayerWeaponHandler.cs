@@ -64,7 +64,7 @@ public class PlayerWeaponHandler : WeaponHandler
 
         if (CurrentWeapontype == weapontypes.SingleFire)
         {
-            Debug.Log("is singlefire");
+            
             spawner.Interval = 0.0000001f;
             if (Input.GetMouseButtonDown(0))
             {
